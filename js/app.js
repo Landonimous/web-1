@@ -1,9 +1,9 @@
 // Данные товаров
 const products = [
-  { id: 1, title: 'Товар 1', price: 11, img: 'https://github.com/Landonimous/web-1/blob/b33bfd451dec7e1f8fe7b751b6083bf0b3f64916/1.png' },
-  { id: 2, title: 'Товар 2', price: 111, img: 'https://github.com/Landonimous/web-1/blob/b33bfd451dec7e1f8fe7b751b6083bf0b3f64916/2.png' },
-  { id: 3, title: 'Товар 3', price: 1111, img: 'https://github.com/Landonimous/web-1/blob/b33bfd451dec7e1f8fe7b751b6083bf0b3f64916/3.png' },
-  { id: 4, title: 'Товар 4', price: 11111, img: 'https://github.com/Landonimous/web-1/blob/b33bfd451dec7e1f8fe7b751b6083bf0b3f64916/4.jpg' }
+  { id: 1, title: 'Товар 1', price: 11, img: "p/1.png" },
+  { id: 2, title: 'Товар 2', price: 111, img: "p/2.png" },
+  { id: 3, title: 'Товар 3', price: 1111, img: "p/3.png" },
+  { id: 4, title: 'Товар 4', price: 11111, img: "p/4.jpg" }
 ];
 
 // DOM элементы
