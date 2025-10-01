@@ -1,9 +1,9 @@
 // ---------------------- Данные товаров (пример) ----------------------
 const products = [
-  { id: 1, title: 'Товар 1', price: 1200, img: '1.png' },
-  { id: 2, title: 'Товар 2', price: 850, img: '2.png' },
-  { id: 3, title: 'Товар 3', price: 430, img: '3.png' },
-  { id: 4, title: 'Товар 4', price: 2999, img: '4.jpg' }
+  { id: 1, title: 'Товар 1', price: 1200, img: 'assets/products/product1.jpg' },
+  { id: 2, title: 'Товар 2', price: 850, img: 'assets/products/product2.jpg' },
+  { id: 3, title: 'Товар 3', price: 430, img: 'assets/products/product3.jpg' },
+  { id: 4, title: 'Товар 4', price: 2999, img: 'assets/products/product4.jpg' }
 ];
 // ---------------------------------------------------------------------
 
