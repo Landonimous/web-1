@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Мини-магазин — landonimous</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Мини-магазин</h1>
+    <div class="cart-preview">
+      <button id="open-cart-btn" aria-label="Открыть корзину">
+        Корзина (<span id="cart-count">0</span>)
+      </button>
+      <span class="cart-total">Сумма: <strong id="cart-total">0</strong> ₽</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalog" id="catalog">
+      <!-- Карточки товаров будут вставлены сюда скриптом -->
+    </section>
+  </main>
+
+  <!-- Модальное окно корзины -->
+  <div id="cart-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-btn" id="close-cart-btn">&times;</button>
+      <h2>Корзина</h2>
+      <div id="cart-items"></div>
+
+      <div class="cart-summary">
+        <div>Итого: <strong id="cart-total-modal">0</strong> ₽</div>
+        <div>Товаров: <strong id="cart-qty-modal">0</strong></div>
+      </div>
+
+      <div class="cart-actions">
+        <button id="checkout-btn">Оформить заказ</button>
+        <button id="clear-cart-btn">Очистить корзину</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно формы заказа -->
+  <div id="order-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-btn" id="close-order-btn">&times;</button>
+      <h2>Оформление заказа</h2>
+
+      <form id="order-form">
+        <label>Имя<br><input name="firstName" required></label>
+        <label>Фамилия<br><input name="lastName" required></label>
+        <label>Адрес доставки<br><input name="address" required></label>
+        <label>Контактный телефон<br><input name="phone" required pattern="\\+?\\d[\\d\\s-]{6,}" placeholder="+7 900 000 00 00"></label>
+        <div style="margin-top:10px">
+          <button type="submit">Создать заказ</button>
+        </div>
+      </form>
+
+      <div id="order-result" role="status" style="margin-top:10px; font-weight:700;"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
