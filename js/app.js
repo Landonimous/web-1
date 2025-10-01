@@ -1,7 +1,9 @@
 // Данные товаров
 const products = [
-  { id: 1, title: 'Товар 1', price: 11, img: "p/1.png" },
-  { id: 2, title: 'Товар 2', price: 111, img: "p/2.png" }
+  { id: 1, title: 'Товар 1', price: 11, img: "1.png" },
+  { id: 2, title: 'Товар 2', price: 111, img: "2.png" },
+  { id: 3, title: 'Товар 3', price: 1111, img: "1.png" },
+  { id: 4, title: 'Товар 4', price: 11111, img: "2.png" }
 ];
 
 // DOM элементы
@@ -40,7 +42,6 @@ function renderCatalog() {
       <div class="price">${p.price} ₽</div>
       <div class="actions">
         <button data-add="${p.id}">Добавить в корзину</button>
-        <button class="secondary" data-view="${p.id}">Подробнее</button>
       </div>
     `;
     catalogEl.appendChild(card);
