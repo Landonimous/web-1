@@ -3,7 +3,15 @@ const products = [
   { id: 1, title: 'Товар 1', price: 11, img: "1.png" },
   { id: 2, title: 'Товар 2', price: 111, img: "2.png" },
   { id: 3, title: 'Товар 3', price: 1111, img: "1.png" },
-  { id: 4, title: 'Товар 4', price: 11111, img: "2.png" }
+  { id: 4, title: 'Товар 4', price: 11111, img: "2.png" },
+  { id: 5, title: 'Товар 5', price: 22, img: "1.png" },
+  { id: 6, title: 'Товар 6', price: 222, img: "2.png" },
+  { id: 7, title: 'Товар 7', price: 2222, img: "1.png" },
+  { id: 8, title: 'Товар 8', price: 22222, img: "2.png" },
+  { id: 9, title: 'Товар 9', price: 33, img: "1.png" },
+  { id: 10, title: 'Товар 10', price: 333, img: "2.png" },
+  { id: 11, title: 'Товар 11', price: 3333, img: "1.png" },
+  { id: 12, title: 'Товар 12', price: 33333, img: "2.png" }
 ];
 
 // DOM элементы
@@ -149,11 +157,6 @@ document.body.addEventListener('click', (e) => {
   const addId = e.target.getAttribute('data-add');
   if (addId) {
     addToCart(Number(addId));
-    return;
-  }
-  const viewId = e.target.getAttribute('data-view');
-  if (viewId) {
-    alert('Здесь могло быть подробное описание товара (в demo оно упрощено).');
     return;
   }
   const removeId = e.target.getAttribute('data-remove');
