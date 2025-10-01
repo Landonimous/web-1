@@ -1,11 +1,10 @@
-// ---------------------- Данные товаров (пример) ----------------------
+// Данные товаров
 const products = [
   { id: 1, title: 'Товар 1', price: 1200, img: '1.png' },
   { id: 2, title: 'Товар 2', price: 850, img: '2.png' },
   { id: 3, title: 'Товар 3', price: 430, img: '3.png' },
   { id: 4, title: 'Товар 4', price: 2999, img: '4.jpg' }
 ];
-// ---------------------------------------------------------------------
 
 // DOM элементы
 const catalogEl = document.getElementById('catalog');
@@ -31,7 +30,7 @@ const STORAGE_KEY = 'myshop_cart_v1';
 // Структура корзины: { productId: { ...product, qty: number } }
 let cart = {};
 
-// ---------------------- Инициализация каталога ----------------------
+// Каталог
 function renderCatalog() {
   catalogEl.innerHTML = '';
   products.forEach(p => {
@@ -51,7 +50,7 @@ function renderCatalog() {
 }
 renderCatalog();
 
-// ---------------------- Работа с localStorage ----------------------
+// localStorage
 function saveCart() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 }
@@ -66,7 +65,7 @@ function loadCart() {
 }
 loadCart();
 
-// ---------------------- Утилиты подсчёта ----------------------
+// Подсчёт
 function calculateTotals() {
   let total = 0, qty = 0;
   Object.values(cart).forEach(item => {
@@ -83,7 +82,7 @@ function updateCartUI() {
   cartQtyModalEl.textContent = qty;
 }
 
-// ---------------------- Добавление / удаление / изменение кол-ва ----------------------
+// Добавление / удаление / изменение количества
 function addToCart(productId, amount = 1) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
@@ -119,7 +118,7 @@ function setQty(productId, qty) {
   }
 }
 
-// ---------------------- Рендер корзины (в модальном окне) ----------------------
+// Рендер корзины (в модальном окне)
 function renderCartItems() {
   cartItemsEl.innerHTML = '';
   if (Object.keys(cart).length === 0) {
@@ -146,7 +145,6 @@ function renderCartItems() {
   });
 }
 
-// ---------------------- События (делегирование) ----------------------
 // Добавить товар из каталога
 document.body.addEventListener('click', (e) => {
   const addId = e.target.getAttribute('data-add');
@@ -204,7 +202,7 @@ clearCartBtn.addEventListener('click', () => {
   renderCartItems();
 });
 
-// Перейти к оформлению (показываем форму заказа)
+// Перейти к оформлению
 checkoutBtn.addEventListener('click', () => {
   cartModal.setAttribute('aria-hidden', 'true');
   orderModal.setAttribute('aria-hidden', 'false');
@@ -223,7 +221,7 @@ orderForm.addEventListener('submit', (e) => {
   saveCart();
   updateCartUI();
   renderCartItems();
-  // можно закрыть модал через несколько секунд
+  // можно закрыть через несколько секунд
   setTimeout(() => {
     orderModal.setAttribute('aria-hidden', 'true');
     orderResult.textContent = '';
