@@ -206,10 +206,10 @@ clearCartBtn.addEventListener('click', () => {
 // Перейти к оформлению
 checkoutBtn.addEventListener('click', () => {
   // Сначала проверяем корзину
-  if (cart.length === 0) {
-    alert('Корзина пуста! Добавьте товары перед оформлением заказа.');
-    return; // выходим и ничего не делаем
-  }
+  if (Object.keys(cart).length === 0) {
+  alert('Корзина пуста! Добавьте товары перед оформлением.');
+  return;
+}
 
   // Если корзина не пустая — открываем окно оформления заказа
   cartModal.setAttribute('aria-hidden', 'true');
@@ -224,10 +224,10 @@ orderForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   // Проверяем корзину
-  if (cart.length === 0) {
-    alert('Корзина пуста! Добавьте товары перед оформлением.');
-    return;
-  }
+  if (Object.keys(cart).length === 0) {
+  alert('Корзина пуста! Добавьте товары перед оформлением.');
+  return;
+    }
 
   // Проверяем телефон
   const phone = document.getElementById('phone').value.trim();
