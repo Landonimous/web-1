@@ -146,17 +146,21 @@ function renderCartItems() {
     const div = document.createElement('div');
     div.className = 'cart-item';
     div.innerHTML = `
-      <img src="${item.img}" alt="${item.title}">
-      <div class="meta">
-        <div class="title">${item.title}</div>
-        <div>${item.price} ₽</div>
-      </div>
-      <div class="qty-control">
-        <button data-decrease="${item.id}">−</button>
-        <button data-increase="${item.id}">+</button>
-      </div>
-      <div><button class="secondary" data-remove="${item.id}">Удалить</button></div>
-    `;
+  <img src="${item.img}" alt="${item.title}">
+  <div class="meta">
+    <div class="title">${item.title}</div>
+    <div>${item.price} ₽</div>
+    <div>Количество: ${item.qty}</div>
+    <div>Сумма: ${item.price * item.qty} ₽</div>
+  </div>
+  <div class="qty-control">
+    <button data-decrease="${item.id}">−</button>
+    <span>${item.qty}</span>
+    <button data-increase="${item.id}">+</button>
+  </div>
+  <div><button class="secondary" data-remove="${item.id}">Удалить</button></div>
+`;
+
     cartItemsEl.appendChild(div);
   });
 }
