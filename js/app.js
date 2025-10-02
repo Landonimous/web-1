@@ -11,7 +11,7 @@ const products = [
   { id: 9, title: 'Товар 9', price: 33, img: "9.jpg" },
   { id: 10, title: 'Товар 10', price: 333, img: "10.png" },
   { id: 11, title: 'Товар 11', price: 3333, img: "11.jpg" },
-  { id: 12, title: 'Товар 12', price: 33333, img: "12.png" }
+  { id: 12, title: 'Товар 12', price: 33333, img: "11.png" }
 ];
 
 // DOM элементы
