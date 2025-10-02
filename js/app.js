@@ -143,7 +143,6 @@ function renderCartItems() {
       </div>
       <div class="qty-control">
         <button data-decrease="${item.id}">−</button>
-        <input type="number" min="1" value="${item.qty}" data-qty="${item.id}" style="width:60px;padding:6px;border-radius:6px;border:1px solid #ddd;">
         <button data-increase="${item.id}">+</button>
       </div>
       <div><button class="secondary" data-remove="${item.id}">Удалить</button></div>
@@ -206,6 +205,13 @@ clearCartBtn.addEventListener('click', () => {
 
 // Перейти к оформлению
 checkoutBtn.addEventListener('click', () => {
+  // Сначала проверяем корзину
+  if (cart.length === 0) {
+    alert('Корзина пуста! Добавьте товары перед оформлением заказа.');
+    return; // выходим и ничего не делаем
+  }
+
+  // Если корзина не пустая — открываем окно оформления заказа
   cartModal.setAttribute('aria-hidden', 'true');
   orderModal.setAttribute('aria-hidden', 'false');
 });
@@ -216,6 +222,22 @@ closeOrderBtn.addEventListener('click', () => orderModal.setAttribute('aria-hidd
 // Обработка отправки формы заказа
 orderForm.addEventListener('submit', (e) => {
   e.preventDefault();
+
+  // Проверяем корзину
+  if (cart.length === 0) {
+    alert('Корзина пуста! Добавьте товары перед оформлением.');
+    return;
+  }
+
+  // Проверяем телефон
+  const phone = document.getElementById('phone').value.trim();
+  const digits = phone.replace(/\D/g, ''); // оставляем только цифры
+
+  if (digits.length < 10 || digits.length > 11) {
+    alert('Введите корректный номер телефона (10–11 цифр).');
+    return;
+  }
+
   // показываем сообщение
   orderResult.textContent = 'Заказ создан!';
   // очищаем корзину
